@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="bkzoo\command\Apps.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\Browzer.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\callback\CallBack.cpp">
+      <Filter>bkzoo\callback</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\helper\ClickHelper.cpp">
+      <Filter>bkzoo\command\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\clipboard\Clipboard.cpp">
+      <Filter>bkzoo\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\menu\CustomMenu.cpp">
+      <Filter>bkzoo\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\DoubleClick.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\Explorer.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\GetResourceString.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\Google.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\menu\MenuInserter.cpp">
+      <Filter>bkzoo\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\menu\MenuInserterImpl.cpp">
+      <Filter>bkzoo\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\MessageBox.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\string\mlangApi.cpp">
+      <Filter>bkzoo\string</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\PasteFileKeyword.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\RegexSearcher.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\registry\Registry.cpp">
+      <Filter>bkzoo\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\RemoteDesktop.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\SearchWord.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\helper\SearchWordHelper.cpp">
+      <Filter>bkzoo\command\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\StringGetter.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\StringUtil.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\thread_func\ThreadFunc.cpp">
+      <Filter>bkzoo\thread_func</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\TortoiseSVN.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\command\TripleClick.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\url\URL.cpp">
+      <Filter>bkzoo\url</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\url\URLEncode.cpp">
+      <Filter>bkzoo\url</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\string\WideCharMultiByte.cpp">
+      <Filter>bkzoo\string</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\TripleClickDetector.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\config\ConfigFactory.cpp">
+      <Filter>bkzoo\config</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\config\ConfigRepository.cpp">
+      <Filter>bkzoo\config</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\config\Config.cpp">
+      <Filter>bkzoo\config</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\string\StringUtils.cpp">
+      <Filter>bkzoo\string</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\config\ConfigService.cpp">
+      <Filter>bkzoo\config</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\PathUtils.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\util\BeckyVersion.cpp">
+      <Filter>bkzoo\util</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\log\Logger.cpp">
+      <Filter>bkzoo\log</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\log\Stream.cpp">
+      <Filter>bkzoo\log</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\log\StringBuffer.cpp">
+      <Filter>bkzoo\log</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bkzoo\command\Apps.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\bkzoo_string.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\bkzoo_url.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\bkzoo_util.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\Browzer.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\callback\CallBack.h">
+      <Filter>bkzoo\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\helper\ClickHelper.h">
+      <Filter>bkzoo\command\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\clipboard\Clipboard.h">
+      <Filter>bkzoo\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\Command.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\menu\CustomMenu.h">
+      <Filter>bkzoo\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\defs.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\debug\detect_memory_leak.h">
+      <Filter>bkzoo\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\DoubleClick.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\Explorer.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\GetResourceString.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\Google.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\menu\MenuInserter.h">
+      <Filter>bkzoo\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\menu\MenuInserterImpl.h">
+      <Filter>bkzoo\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\MessageBox.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\string\mlangApi.h">
+      <Filter>bkzoo\string</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\PasteFileKeyword.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\RegexSearcher.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\registry\Registry.h">
+      <Filter>bkzoo\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\RemoteDesktop.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\SearchWord.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\helper\SearchWordHelper.h">
+      <Filter>bkzoo\command\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\StringGetter.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\StringUtil.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\thread_func\ThreadFunc.h">
+      <Filter>bkzoo\thread_func</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\TortoiseSVN.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\TripleClick.h">
+      <Filter>bkzoo\command</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\url\URL.h">
+      <Filter>bkzoo\url</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\url\URLEncode.h">
+      <Filter>bkzoo\url</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\string\WideCharMultiByte.h">
+      <Filter>bkzoo\string</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\wtlheader.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\TripleClickDetector.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\config\ConfigFactory.h">
+      <Filter>bkzoo\config</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\config\ConfigRepository.h">
+      <Filter>bkzoo\config</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\config\Config.h">
+      <Filter>bkzoo\config</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\string\StringUtils.h">
+      <Filter>bkzoo\string</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\config\ConfigService.h">
+      <Filter>bkzoo\config</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\PathUtils.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\bkzoo_config.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\bkzoo_gtest.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\BeckyVersion.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\ui\UiPresenter.h">
+      <Filter>bkzoo\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\log\Logger.h">
+      <Filter>bkzoo\log</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\log\Stream.h">
+      <Filter>bkzoo\log</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\log\StringBuffer.h">
+      <Filter>bkzoo\log</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\log\LogLevel.h">
+      <Filter>bkzoo\log</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\bkzoo_log.h">
+      <Filter>bkzoo</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\util\ModifierKeyType.h">
+      <Filter>bkzoo\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="bkzoo">
+      <UniqueIdentifier>{69469e7a-85c8-4143-ae38-7372005ff738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\command">
+      <UniqueIdentifier>{ed96acee-de95-413c-93d4-b28a8aa05325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\callback">
+      <UniqueIdentifier>{0c8520d0-b4aa-40b4-93bd-5227ecbf566e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\util">
+      <UniqueIdentifier>{97c02b3a-bc76-4df6-abde-97c4d3778bee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\command\helper">
+      <UniqueIdentifier>{5187fe68-9fb4-4d96-a26a-515f369b2b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\clipboard">
+      <UniqueIdentifier>{7398cbd8-5be2-4709-94c1-8811ae254380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\config">
+      <UniqueIdentifier>{67b73f45-21a5-4a33-9621-7944ebe0b515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\menu">
+      <UniqueIdentifier>{35574d18-042c-41d2-9c67-68da97c02aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\debug">
+      <UniqueIdentifier>{0633ced8-0d6d-465f-a72b-8276668076e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\string">
+      <UniqueIdentifier>{5fbde880-1691-43a0-9612-4a8f2ce889c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\registry">
+      <UniqueIdentifier>{0bf50415-dd3e-4ea7-9838-e99e36c50e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\thread_func">
+      <UniqueIdentifier>{98b5dbe5-ab9a-4b85-a5ce-695163e45697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\url">
+      <UniqueIdentifier>{b96daaae-570b-4307-a944-3e4b32b01eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\ui">
+      <UniqueIdentifier>{a20883df-2858-4ec9-ac44-49b901e62286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\log">
+      <UniqueIdentifier>{aa7a113e-973b-4838-947a-a1fb4c2bbd81}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

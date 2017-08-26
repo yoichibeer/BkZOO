@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="include\internal">
+      <UniqueIdentifier>{68d94566-a8fc-436a-b5ff-aba58d5ee9b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\gtest\gtest-death-test.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest-message.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest-param-test.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest-printers.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest-spi.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest-test-part.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest-typed-test.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest_pred_impl.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\gtest_prod.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-death-test-internal.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-filepath.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-internal.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-linked_ptr.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-param-util.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-param-util-generated.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-port.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-string.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-tuple.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtest\internal\gtest-type-util.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\gtest-all.cc" />
+  </ItemGroup>
+</Project>

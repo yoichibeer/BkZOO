@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{62A3FCC0-0F63-4968-ABF3-B682CA8C91E6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BkZOOLib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;CONFIG_DIALOG;_CRT_SECURE_NO_WARNINGS;BKZOO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>./;./bkzoo;../vendor/wtl/WTL91_5321_Final/Include;../vendor/PlugInSDK;../BkZOO</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4127</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>/ignore:4078 /ignore:4254 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;CONFIG_DIALOG;_CRT_SECURE_NO_WARNINGS;BKZOO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>./;./bkzoo;../vendor/wtl/WTL91_5321_Final/Include;../vendor/PlugInSDK;../BkZOO</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4127</DisableSpecificWarnings>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/ignore:4078 /ignore:4254 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="bkzoo\bkzoo_config.h" />
+    <ClInclude Include="bkzoo\bkzoo_gtest.h" />
+    <ClInclude Include="bkzoo\bkzoo_string.h" />
+    <ClInclude Include="bkzoo\bkzoo_url.h" />
+    <ClInclude Include="bkzoo\bkzoo_util.h" />
+    <ClInclude Include="bkzoo\bkzoo_log.h" />
+    <ClInclude Include="bkzoo\callback\CallBack.h" />
+    <ClInclude Include="bkzoo\clipboard\Clipboard.h" />
+    <ClInclude Include="bkzoo\command\Apps.h" />
+    <ClInclude Include="bkzoo\command\Browzer.h" />
+    <ClInclude Include="bkzoo\command\Command.h" />
+    <ClInclude Include="bkzoo\command\DoubleClick.h" />
+    <ClInclude Include="bkzoo\command\Explorer.h" />
+    <ClInclude Include="bkzoo\command\Google.h" />
+    <ClInclude Include="bkzoo\command\helper\ClickHelper.h" />
+    <ClInclude Include="bkzoo\command\helper\SearchWordHelper.h" />
+    <ClInclude Include="bkzoo\command\PasteFileKeyword.h" />
+    <ClInclude Include="bkzoo\command\RemoteDesktop.h" />
+    <ClInclude Include="bkzoo\command\SearchWord.h" />
+    <ClInclude Include="bkzoo\command\TortoiseSVN.h" />
+    <ClInclude Include="bkzoo\command\TripleClick.h" />
+    <ClInclude Include="bkzoo\config\Config.h" />
+    <ClInclude Include="bkzoo\config\ConfigFactory.h" />
+    <ClInclude Include="bkzoo\config\ConfigRepository.h" />
+    <ClInclude Include="bkzoo\config\ConfigService.h" />
+    <ClInclude Include="bkzoo\debug\detect_memory_leak.h" />
+    <ClInclude Include="bkzoo\defs.h" />
+    <ClInclude Include="bkzoo\log\Logger.h" />
+    <ClInclude Include="bkzoo\log\LogLevel.h" />
+    <ClInclude Include="bkzoo\log\Stream.h" />
+    <ClInclude Include="bkzoo\log\StringBuffer.h" />
+    <ClInclude Include="bkzoo\menu\CustomMenu.h" />
+    <ClInclude Include="bkzoo\menu\MenuInserter.h" />
+    <ClInclude Include="bkzoo\menu\MenuInserterImpl.h" />
+    <ClInclude Include="bkzoo\registry\Registry.h" />
+    <ClInclude Include="bkzoo\string\mlangApi.h" />
+    <ClInclude Include="bkzoo\string\StringUtils.h" />
+    <ClInclude Include="bkzoo\string\WideCharMultiByte.h" />
+    <ClInclude Include="bkzoo\thread_func\ThreadFunc.h" />
+    <ClInclude Include="bkzoo\ui\UiPresenter.h" />
+    <ClInclude Include="bkzoo\url\URL.h" />
+    <ClInclude Include="bkzoo\url\URLEncode.h" />
+    <ClInclude Include="bkzoo\util\BeckyVersion.h" />
+    <ClInclude Include="bkzoo\util\GetResourceString.h" />
+    <ClInclude Include="bkzoo\util\MessageBox.h" />
+    <ClInclude Include="bkzoo\util\ModifierKeyType.h" />
+    <ClInclude Include="bkzoo\util\PathUtils.h" />
+    <ClInclude Include="bkzoo\util\RegexSearcher.h" />
+    <ClInclude Include="bkzoo\util\StringGetter.h" />
+    <ClInclude Include="bkzoo\util\StringUtil.h" />
+    <ClInclude Include="bkzoo\util\TripleClickDetector.h" />
+    <ClInclude Include="bkzoo\wtlheader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bkzoo\callback\CallBack.cpp" />
+    <ClCompile Include="bkzoo\clipboard\Clipboard.cpp" />
+    <ClCompile Include="bkzoo\command\Apps.cpp" />
+    <ClCompile Include="bkzoo\command\Browzer.cpp" />
+    <ClCompile Include="bkzoo\command\DoubleClick.cpp" />
+    <ClCompile Include="bkzoo\command\Explorer.cpp" />
+    <ClCompile Include="bkzoo\command\Google.cpp" />
+    <ClCompile Include="bkzoo\command\helper\ClickHelper.cpp" />
+    <ClCompile Include="bkzoo\command\helper\SearchWordHelper.cpp" />
+    <ClCompile Include="bkzoo\command\PasteFileKeyword.cpp" />
+    <ClCompile Include="bkzoo\command\RemoteDesktop.cpp" />
+    <ClCompile Include="bkzoo\command\SearchWord.cpp" />
+    <ClCompile Include="bkzoo\command\TortoiseSVN.cpp" />
+    <ClCompile Include="bkzoo\command\TripleClick.cpp" />
+    <ClCompile Include="bkzoo\config\Config.cpp" />
+    <ClCompile Include="bkzoo\config\ConfigFactory.cpp" />
+    <ClCompile Include="bkzoo\config\ConfigRepository.cpp" />
+    <ClCompile Include="bkzoo\config\ConfigService.cpp" />
+    <ClCompile Include="bkzoo\log\Logger.cpp" />
+    <ClCompile Include="bkzoo\log\Stream.cpp" />
+    <ClCompile Include="bkzoo\log\StringBuffer.cpp" />
+    <ClCompile Include="bkzoo\menu\CustomMenu.cpp" />
+    <ClCompile Include="bkzoo\menu\MenuInserter.cpp" />
+    <ClCompile Include="bkzoo\menu\MenuInserterImpl.cpp" />
+    <ClCompile Include="bkzoo\registry\Registry.cpp" />
+    <ClCompile Include="bkzoo\string\mlangApi.cpp" />
+    <ClCompile Include="bkzoo\string\StringUtils.cpp" />
+    <ClCompile Include="bkzoo\string\WideCharMultiByte.cpp" />
+    <ClCompile Include="bkzoo\thread_func\ThreadFunc.cpp" />
+    <ClCompile Include="bkzoo\url\URL.cpp" />
+    <ClCompile Include="bkzoo\url\URLEncode.cpp" />
+    <ClCompile Include="bkzoo\util\BeckyVersion.cpp" />
+    <ClCompile Include="bkzoo\util\GetResourceString.cpp" />
+    <ClCompile Include="bkzoo\util\MessageBox.cpp" />
+    <ClCompile Include="bkzoo\util\PathUtils.cpp" />
+    <ClCompile Include="bkzoo\util\RegexSearcher.cpp" />
+    <ClCompile Include="bkzoo\util\StringGetter.cpp" />
+    <ClCompile Include="bkzoo\util\StringUtil.cpp" />
+    <ClCompile Include="bkzoo\util\TripleClickDetector.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

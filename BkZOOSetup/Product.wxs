@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define BkZOO_TargetDir=$(var.BkZOO.TargetDir)?>
+  <Product Id="*" Name="BkZOO! Ver.2" Language="1041" Codepage="932" Version="2.2.0.0" Manufacturer="yoichibeer" UpgradeCode="c78fbc69-df5e-4ee1-9910-d9ca1cb9523a">
+    <Package Id="*" Compressed="yes" InstallScope="perUser" />
+    <MajorUpgrade DowngradeErrorMessage="[ProductName] の新しいバージョンが既にインストールされています。" AllowSameVersionUpgrades="no" />
+    <Media Id="1" Cabinet="BkZOO2.cab" EmbedCab="yes" />
+    <Condition Message="Windows Vista以上が必要です。">
+      <![CDATA[VersionNT >= 600]]>
+    </Condition>
+    <Property Id="BECKYDATADIR">
+      <RegistrySearch Id="BeckyDataDir"
+                      Root="HKCU"
+                      Key="Software\RimArts\B2\Settings"
+                      Name="DataDir"
+                      Type="raw" Win64="no" />
+    </Property>
+    <Condition Message="Becky!をインストール後、Becky!を起動してデータフォルダを指定してください。">
+      <![CDATA[BECKYDATADIR]]>
+    </Condition>
+    <Feature Id="ProductFeature" Title="BkZOOSetup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+    <Icon Id="BkZOO2.icon" SourceFile="$(var.BkZOO_TargetDir)BkZOO2.dll" />
+    <Property Id="ARPPRODUCTICON" Value="BkZOO2.icon" />
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <WixVariable Id="WixUILicenseRtf" Value="BkZOO.rtf" />
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="BECKYDATADIR">
+        <Directory Id="INSTALLFOLDER" Name="PlugIns">
+          <Directory Id="BKZOO2DIR" Name="BkZOO2">
+            <Directory Id="VENDORDIR" Name="vendor" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents">
+      <Component Id="BkZOO2.dll" Guid="6d7814a9-40d9-43c3-9da0-eeb0175b4d6f"  Directory="INSTALLFOLDER">
+        <File Id="BkZOO2.dll" Name="BkZOO2.dll" Source="$(var.BkZOO_TargetDir)BkZOO2.dll" />
+      </Component>
+      <Component Id="BkZOO2.dir" Guid="C08AC282-0195-499D-A9C3-A818294192FE"  Directory="BKZOO2DIR">
+        <File Id="BkZOO2.preset.ini" Name="BkZOO2.preset.ini" Source="BkZOO2/BkZOO2.preset.ini" />
+        <RemoveFile Id="Remove.BkZOO2.log" Name="*.log" On="uninstall"/>
+      </Component>
+      <Component Id="vendor.dir" Guid="53789EEC-2580-495E-8D1F-9FE9A267F193"  Directory="VENDORDIR">
+        <File Id="MS_PL.txt" Name="MS_PL.txt" Source="BkZOO2/vendor/MS-PL.txt" />
+        <File Id="ReadMe.html" Name="ReadMe.html" Source="BkZOO2/vendor/ReadMe.html" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

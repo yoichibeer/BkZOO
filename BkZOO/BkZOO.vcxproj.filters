@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BeckyCallbacks.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="bkzoo\mouse\MouseHook.cpp">
+      <Filter>bkzoo\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\Column.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\ColumnImpl.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\SettingDlg.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\BackgroundColor.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\SearchSiteForm.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\CheckBeckyUpdateForm.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\setting\DetectBeckyNewVersionDlg.cpp">
+      <Filter>bkzoo\setting</Filter>
+    </ClCompile>
+    <ClCompile Include="bkzoo\ui\UiPresenterImpl.cpp">
+      <Filter>bkzoo\ui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="bkzoo\mouse\MouseHook.h">
+      <Filter>bkzoo\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\Column.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\ColumnImpl.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\SettingDlg.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\BackgroundColor.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\SearchSiteForm.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\CheckBeckyUpdateForm.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\setting\DetectBeckyNewVersionDlg.h">
+      <Filter>bkzoo\setting</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\ui\UiPresenterImpl.h">
+      <Filter>bkzoo\ui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BkZOO.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\Penguin3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BkZOO.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="bkzoo">
+      <UniqueIdentifier>{29594301-cda6-427b-a1f9-02cb89c3037c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\setting">
+      <UniqueIdentifier>{d0cb67ab-535a-4968-ba1b-c7b94efa8fc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\mouse">
+      <UniqueIdentifier>{c79d740b-3726-49b7-823c-d745a03e262e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\ui">
+      <UniqueIdentifier>{b44dfc43-6afb-4025-9bdb-50aeb144a05d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

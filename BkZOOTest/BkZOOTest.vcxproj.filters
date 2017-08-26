@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BkZOOTest.cpp" />
+    <ClCompile Include="bkzoo_tut.cpp" />
+    <ClCompile Include="test_ClickCountDetector.cpp" />
+    <ClCompile Include="test_Clipboard.cpp" />
+    <ClCompile Include="test_command_helper.cpp" />
+    <ClCompile Include="test_RegexSearcher.cpp" />
+    <ClCompile Include="test_Registry.cpp" />
+    <ClCompile Include="test_StringGetter.cpp" />
+    <ClCompile Include="test_URL.cpp" />
+    <ClCompile Include="test_URLEncode.cpp" />
+    <ClCompile Include="test_WideCharMultiByte.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bkzoo_tut.h" />
+    <ClInclude Include="..\vendor\tut\tut.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_assert.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_config.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_console_reporter.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_cppunit_reporter.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_exception.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_fpt.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_macros.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_main.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_posix.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_reporter.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_restartable.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_result.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_runner.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vendor\tut\tut_xml_reporter.hpp">
+      <Filter>tut</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="tut">
+      <UniqueIdentifier>{8ba38342-5f12-4408-ba17-a34718472247}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

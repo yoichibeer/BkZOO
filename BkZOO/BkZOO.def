@@ -1,0 +1,7 @@
+EXPORTS
+BKC_OnMenuInit @1
+BKC_OnPlugInSetup @2
+BKC_OnPlugInInfo @3
+BKC_OnRetrieve @4
+BKC_OnOpenMail @5
+BKC_OnExit @6
