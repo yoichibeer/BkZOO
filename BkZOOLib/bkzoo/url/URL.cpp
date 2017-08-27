@@ -221,7 +221,13 @@ namespace bkzoo
         bool URL::initialize(const std::wregex& regex, Scheme scheme)
         {
             std::wsmatch results;
-            if (!std::regex_search(orginalUrl_, results, regex))
+            std::wstring resultsStr[4];
+            if (std::regex_search(orginalUrl_, results, regex))
+            {
+                for (int i = 0; i < 4; ++i)
+                    resultsStr[i] = results[i + 2].str();
+            }
+            else
             {
                 std::wregex quoteRegex(L"^[>| ]*(.*)"); // 引用符の  > >  などがあった場合に無視してURLかを確認する
                 if (!std::regex_search(orginalUrl_, results, quoteRegex))
@@ -233,10 +239,23 @@ namespace bkzoo
                 {
                     return false;
                 }
+                for (int i = 0; i < 4; ++i)
+                    resultsStr[i] = results[i + 2].str();
             }
 
+            // 2017/08/27 memo
+            // 下記のfor文の代わりのその下のresultsを直接osに代入するコードだとresultsが変な値になってて動かない。
+            // release版だとOK。上の引用符対応のブロックを抜けるときにresultsの保持するメモリを壊しているように見える。
+            // 別のresultsにコピーしてもnewで確保しても同じ挙動。
+            // とりあえず、上記の通り、wstringにコピーして回避。
+            // OSS対応中に、全く同じコードで問題なかったのが突然動かなくなった。
+            // 差分を確認したところ変えたところはリソースが参照するWTLのバージョンくらい。
             std::wstringstream os;
-            os << results[2].str() << results[3].str() << results[4].str() << results[5].str();
+            for (int i = 0; i < 4; ++i)
+                os << resultsStr[i];
+            //os << results[2].str() << results[3].str() << results[4].str() << results[5].str();
+
+
             urlExceptScheme_ = os.str();
 
             validSchemes_ |= scheme;
