@@ -209,9 +209,10 @@ FakesAssemblies/
 *.bak
 *.opendb
 
+# cppcheck
+cppcheck/cppcheck_result.xml
+
 # for testdata
 UnitTest/testdata/output_*
 *.VC.db
-
-# cppcheck
-cppcheck/cppcheck_result.xml
+BkZOOTest/cp_*.txt
