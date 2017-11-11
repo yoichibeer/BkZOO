@@ -12,5 +12,6 @@
     <ClCompile Include="LoggerTest.cpp" />
     <ClCompile Include="StreamTest.cpp" />
     <ClCompile Include="StingBufferTest.cpp" />
+    <ClCompile Include="RegistryTest.cpp" />
   </ItemGroup>
 </Project>

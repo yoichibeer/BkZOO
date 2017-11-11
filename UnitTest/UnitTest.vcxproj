@@ -93,6 +93,7 @@
     <ClCompile Include="ConfigTest.cpp" />
     <ClCompile Include="LoggerTest.cpp" />
     <ClCompile Include="PathUtilsTest.cpp" />
+    <ClCompile Include="RegistryTest.cpp" />
     <ClCompile Include="StingBufferTest.cpp" />
     <ClCompile Include="StreamTest.cpp" />
     <ClCompile Include="StringUtilsTest.cpp" />
