@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -32,6 +32,8 @@ namespace bkzoo
         void WINAPI remoteDesktop(HWND hWnd, LPARAM lParam);
 
         void WINAPI browzer(HWND hWnd, LPARAM lParam);
+
+        void WINAPI internetExplore(HWND hWnd, LPARAM lParam);
 
         void WINAPI explorer(HWND hWnd, LPARAM lParam);
 

@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -46,11 +46,13 @@ namespace bkzoo
             void regSetValue(const wchar_t* valueName, const std::wstring& data);
 
             static bool getInstallLocation(const wchar_t* applicationName, std::wstring* pInstallLocation);
-            static bool getTortoiseProcInstallLocation(std::wstring* pnstallLocation);
+            static bool getTortoiseProcInstallLocation(std::wstring* pInstallLocation);
+            static bool getIexploreInstallLocation(std::wstring* pInstallLocation);
 
             static bool isSkipWarningOpenUrl();
             static void removeIgnoreFlagForWarningOpenUrl();
             static void addIgnoreFlagForWarningOpenUrl();
+            static bool isDefaultBrowzerIExplorer();
 
             static constexpr wchar_t * const REG_VALUE_GUID = L"{36EEF0A3-222E-446F-9DA9-8DF07F7BFC83}";
 

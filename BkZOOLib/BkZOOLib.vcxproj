@@ -95,6 +95,7 @@
     <ClInclude Include="bkzoo\command\Google.h" />
     <ClInclude Include="bkzoo\command\helper\ClickHelper.h" />
     <ClInclude Include="bkzoo\command\helper\SearchWordHelper.h" />
+    <ClInclude Include="bkzoo\command\InternetExplore.h" />
     <ClInclude Include="bkzoo\command\PasteFileKeyword.h" />
     <ClInclude Include="bkzoo\command\RemoteDesktop.h" />
     <ClInclude Include="bkzoo\command\SearchWord.h" />
@@ -142,6 +143,7 @@
     <ClCompile Include="bkzoo\command\Google.cpp" />
     <ClCompile Include="bkzoo\command\helper\ClickHelper.cpp" />
     <ClCompile Include="bkzoo\command\helper\SearchWordHelper.cpp" />
+    <ClCompile Include="bkzoo\command\InternetExplore.cpp" />
     <ClCompile Include="bkzoo\command\PasteFileKeyword.cpp" />
     <ClCompile Include="bkzoo\command\RemoteDesktop.cpp" />
     <ClCompile Include="bkzoo\command\SearchWord.cpp" />

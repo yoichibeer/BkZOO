@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -177,13 +177,13 @@ namespace bkzoo
             registryPath << L"Microsoft\\Windows\\CurrentVersion\\Uninstall\\" << applicationName;
 
             Registry registry(HKEY_LOCAL_MACHINE, registryPath.str().c_str());
-            HKEY hKey = registry.regOpenKey_READ();
+            const HKEY hKey = registry.regOpenKey_READ();
             if (hKey == nullptr)
             {
                 return false;
             }
 
-            bool success = registry.regQueryValue(L"InstallLocation", installLocation);
+            const bool success = registry.regQueryValue(L"InstallLocation", installLocation);
             if (!success)
             {
                 return false;
@@ -211,13 +211,43 @@ namespace bkzoo
             std::wstring installLocation;
 
             Registry registry(HKEY_LOCAL_MACHINE, L"SOFTWARE\\TortoiseSVN");
-            HKEY hKey = registry.regOpenKey_READ();
+            const HKEY hKey = registry.regOpenKey_READ();
             if (hKey == nullptr)
             {
                 return false;
             }
 
-            bool success = registry.regQueryValue(L"ProcPath", installLocation);
+            const bool success = registry.regQueryValue(L"ProcPath", installLocation);
+            if (!success)
+            {
+                return false;
+            }
+
+            if (installLocation.empty())
+            {
+                return false;
+            }
+
+            if (pInstallLocation != nullptr)
+            {
+                *pInstallLocation = installLocation;
+            }
+
+            return true;
+        }
+
+        bool Registry::getIexploreInstallLocation(std::wstring* pInstallLocation)
+        {
+            std::wstring installLocation;
+
+            Registry registry(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE");
+            const HKEY hKey = registry.regOpenKey_READ();
+            if (hKey == nullptr)
+            {
+                return false;
+            }
+
+            const bool success = registry.regQueryValue(L"", installLocation); // L"" for default
             if (!success)
             {
                 return false;
@@ -242,14 +272,14 @@ namespace bkzoo
             registryPath << REG_PATH_DontShowMeThisDialogAgain;
 
             Registry registry(HKEY_CURRENT_USER, registryPath.str().c_str());
-            HKEY hKey = registry.regOpenKey_READ();
+            const HKEY hKey = registry.regOpenKey_READ();
             if (hKey == nullptr)
             {
                 return false;
             }
 
             std::wstring dontShowMeThisDialogAgainValue;
-            bool success = registry.regQueryValue(Registry::REG_VALUE_GUID, dontShowMeThisDialogAgainValue);
+            const bool success = registry.regQueryValue(Registry::REG_VALUE_GUID, dontShowMeThisDialogAgainValue);
             if (!success)
             {
                 return false;
@@ -269,7 +299,7 @@ namespace bkzoo
             registryPath << REG_PATH_DontShowMeThisDialogAgain;
 
             Registry registry(HKEY_CURRENT_USER, registryPath.str().c_str());
-            HKEY hKey = registry.regOpenKey_READ_WRITE();
+            const HKEY hKey = registry.regOpenKey_READ_WRITE();
             if (hKey == nullptr)
             {
                 return;
@@ -284,13 +314,55 @@ namespace bkzoo
             registryPath << REG_PATH_DontShowMeThisDialogAgain;
 
             Registry registry(HKEY_CURRENT_USER, registryPath.str().c_str());
-            HKEY hKey = registry.regCreateKey();
+            const HKEY hKey = registry.regCreateKey();
             if (hKey == nullptr)
             {
                 return;
             }
 
             registry.regSetValue(Registry::REG_VALUE_GUID, L"NO");
+        }
+
+        static bool isDefaultBrowzerIE(const std::wstring& subKey, const std::wstring& progidValueForIE)
+        {
+            Registry registry(HKEY_CURRENT_USER, subKey);
+            const HKEY hKey = registry.regOpenKey_READ();
+            if (hKey == nullptr)
+                return false;
+
+            std::wstring defaultBrowzer;
+            const bool success = registry.regQueryValue(L"Progid", defaultBrowzer);
+            if (!success)
+                return false;
+
+            if (defaultBrowzer.empty())
+                return false;
+
+            if (defaultBrowzer == progidValueForIE)
+                return true;
+
+            return false;
+        }
+
+        bool Registry::isDefaultBrowzerIExplorer()
+        {
+            // Windows 8 以降
+            if (isDefaultBrowzerIE(
+                L"Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\http\\UserChoice",
+                L"IE.HTTP"))
+            {
+                return true;
+            }
+
+            // Windows 7 以前
+            if (isDefaultBrowzerIE(
+                L"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.html\\UserChoice",
+                L"IE.AssocFile.HTM"))
+            {
+                return true;
+            }
+
+            return false;
         }
 
     }

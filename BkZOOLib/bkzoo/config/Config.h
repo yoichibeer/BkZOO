@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -28,6 +28,7 @@ namespace bkzoo
         enum class App : wchar_t
         {
             Browzer = L'1',
+            InternetExplore = L'2',
             Explorer = L'3',
             FFFTP = L'T',
             FileZilla = L'Z',

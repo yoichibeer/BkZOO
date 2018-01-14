@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -14,6 +14,7 @@
 #include "bkzoo_util.h"
 #include "bkzoo_config.h"
 #include "bkzoo_string.h"
+#include "bkzoo_log.h"
 
 #include "resource.h"
 
@@ -140,6 +141,41 @@ namespace bkzoo
                 Config::instance().shortcut(App::Browzer),
                 getResoureStr(IDS_STRING_MENU_STATUS_BROWZER),
                 callback::browzer
+            );
+        }
+
+
+        InternetExplorerMenu::InternetExplorerMenu(int nType, const std::wstring& selectedString, const std::wstring& selectedShortString)
+        {
+            const url::URL url(selectedString, Scheme::HTTP | Scheme::HTTPS | Scheme::FTP);
+            if (!url.validate()) return;
+
+            // デフォルトブラウザがIEならIEのメニューは表示しない
+            if (registry::Registry::isDefaultBrowzerIExplorer()) return;
+
+            std::wstring iexploreInstallLocation;
+            if (registry::Registry::getIexploreInstallLocation(&iexploreInstallLocation))
+            {
+                if (iexploreInstallLocation.empty())
+                {
+                    LOG_ERROR << "IEXPLORE.EXE is empty.";
+                    return;
+                }
+            }
+            else
+            {
+                LOG_ERROR << "getIexploreInstallLocation() failed.";
+                return;
+            }
+
+            initializeMenu(
+                nType,
+                L"IEで\"",
+                selectedShortString,
+                L"\"を開く",
+                Config::instance().shortcut(App::InternetExplore),
+                getResoureStr(IDS_STRING_MENU_STATUS_INTERNET_EXPLORER),
+                callback::internetExplore
             );
         }
 

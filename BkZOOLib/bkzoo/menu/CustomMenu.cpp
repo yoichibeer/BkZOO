@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -113,6 +113,14 @@ namespace bkzoo
                 {
                     BrowzerMenu browzerMenu(nType, selectedString, selectedStringShort);
                     success = browzerMenu.insert(appendedMenu, insertPos);
+                    if (success) ++insertPos;
+                }
+
+
+                // IEで開く（デフォルトブラウザがIEなら表示しない）
+                {
+                    InternetExplorerMenu ieMenu(nType, selectedString, selectedStringShort);
+                    success = ieMenu.insert(appendedMenu, insertPos);
                     if (success) ++insertPos;
                 }
 

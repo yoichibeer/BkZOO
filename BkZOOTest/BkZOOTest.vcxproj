@@ -96,7 +96,6 @@
     <ClCompile Include="test_Clipboard.cpp" />
     <ClCompile Include="test_command_helper.cpp" />
     <ClCompile Include="test_RegexSearcher.cpp" />
-    <ClCompile Include="test_Registry.cpp" />
     <ClCompile Include="test_StringGetter.cpp" />
     <ClCompile Include="test_URL.cpp" />
     <ClCompile Include="test_URLEncode.cpp" />

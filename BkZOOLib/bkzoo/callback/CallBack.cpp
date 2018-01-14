@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -14,6 +14,7 @@
 #include "command/TortoiseSVN.h"
 #include "command/RemoteDesktop.h"
 #include "command/Browzer.h"
+#include "command/InternetExplore.h"
 #include "command/Explorer.h"
 
 #include "thread_func/ThreadFunc.h"
@@ -139,6 +140,21 @@ namespace bkzoo
             try
             {
                 command::Command* command = new command::BrowzerCommand(
+                    command::SimpleParam{ hWnd, StringGetter::removedSpaceText(StringGetter::selectedText(hWnd)) });
+                ::_beginthread(thread_func::executeCommand, 0, command);
+            }
+            catch (...)
+            {
+                LOG_ERROR << "catch";
+                assert(false);
+            }
+        }
+
+        void WINAPI internetExplore(HWND hWnd, LPARAM /*lParam*/)
+        {
+            try
+            {
+                command::Command* command = new command::InternetExploreCommand(
                     command::SimpleParam{ hWnd, StringGetter::removedSpaceText(StringGetter::selectedText(hWnd)) });
                 ::_beginthread(thread_func::executeCommand, 0, command);
             }

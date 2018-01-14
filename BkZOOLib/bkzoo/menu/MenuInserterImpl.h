@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -56,6 +56,13 @@ namespace bkzoo
         {
         public:
             BrowzerMenu(int nType, const std::wstring& selectedString, const std::wstring& selectedShortString);
+        };
+
+
+        class InternetExplorerMenu : public MenuInserter
+        {
+        public:
+            InternetExplorerMenu(int nType, const std::wstring& selectedString, const std::wstring& selectedShortString);
         };
 
 

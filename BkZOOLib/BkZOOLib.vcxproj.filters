@@ -118,6 +118,9 @@
     <ClCompile Include="bkzoo\log\StringBuffer.cpp">
       <Filter>bkzoo\log</Filter>
     </ClCompile>
+    <ClCompile Include="bkzoo\command\InternetExplore.cpp">
+      <Filter>bkzoo\command</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bkzoo\command\Apps.h">
@@ -275,6 +278,9 @@
     </ClInclude>
     <ClInclude Include="bkzoo\util\ModifierKeyType.h">
       <Filter>bkzoo\util</Filter>
+    </ClInclude>
+    <ClInclude Include="bkzoo\command\InternetExplore.h">
+      <Filter>bkzoo\command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

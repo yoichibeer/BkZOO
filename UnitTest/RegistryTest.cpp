@@ -1,7 +1,7 @@
 ﻿/*
  * BkZOO!
  *
- * Copyright 2011-2017 yoichibeer.
+ * Copyright 2011-2018 yoichibeer.
  * Released under the MIT license.
  */
 
@@ -181,6 +181,27 @@ TEST(RegistryTest, getTortoiseProcInstallLocation)
     }
 }
 
+// getIexploreInstallLocation
+TEST(RegistryTest, getIexploreInstallLocation)
+{
+    std::wstring iexploreInstallLocation;
+    bool ret = Registry::getIexploreInstallLocation(&iexploreInstallLocation);
+    bool ret_nullptr = Registry::getIexploreInstallLocation(nullptr);
+
+    if (ret)
+    {
+        EXPECT_TRUE(ret_nullptr);
+        EXPECT_EQ(L"C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE"
+            , iexploreInstallLocation);
+    }
+    else
+    {
+        EXPECT_FALSE(ret_nullptr);
+        std::cout << " not exists iexplore.exe";
+        return;
+    }
+}
+
 
 // Error
 TEST(RegistryTest, Error)
@@ -233,4 +254,16 @@ TEST(RegistryTest, warningOpenUrl)
         Registry::removeIgnoreFlagForWarningOpenUrl();
         EXPECT_FALSE(Registry::isSkipWarningOpenUrl());
     }
+}
+
+
+// isDefaultBrowzerIExplorer
+TEST(RegistryTest, isDefaultBrowzerIExplorer)
+{
+    bool ret = Registry::isDefaultBrowzerIExplorer();
+    // 以下、開発環境がChromeデフォルトなのでコメントアウト。一度だけIEデフォルトにして確認済み。
+    //EXPECT_TRUE(ret);
+
+    // 必ずfalseになる。ret変数未使用のwarning回避目的。
+    EXPECT_FALSE(ret && !ret);
 }
