@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <?define BkZOO_TargetDir=$(var.BkZOO.TargetDir)?>
-  <Product Id="*" Name="BkZOO! Ver.2" Language="1041" Codepage="932" Version="2.2.0.0" Manufacturer="yoichibeer" UpgradeCode="c78fbc69-df5e-4ee1-9910-d9ca1cb9523a">
+  <Product Id="*" Name="BkZOO! Ver.2" Language="1041" Codepage="932" Version="2.3.0.0" Manufacturer="yoichibeer" UpgradeCode="c78fbc69-df5e-4ee1-9910-d9ca1cb9523a">
     <Package Id="*" Compressed="yes" InstallScope="perUser" />
     <MajorUpgrade DowngradeErrorMessage="[ProductName] の新しいバージョンが既にインストールされています。" AllowSameVersionUpgrades="no" />
     <Media Id="1" Cabinet="BkZOO2.cab" EmbedCab="yes" />
@@ -23,6 +23,7 @@
     </Feature>
     <Icon Id="BkZOO2.icon" SourceFile="$(var.BkZOO_TargetDir)BkZOO2.dll" />
     <Property Id="ARPPRODUCTICON" Value="BkZOO2.icon" />
+    <Property Id='ARPNOREPAIR'>1</Property>
     <UIRef Id="WixUI_Minimal" />
     <UIRef Id="WixUI_ErrorProgressText" />
     <WixVariable Id="WixUILicenseRtf" Value="BkZOO.rtf" />

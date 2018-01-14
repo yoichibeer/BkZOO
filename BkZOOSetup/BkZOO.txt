@@ -1,4 +1,4 @@
-BkZOO! URL OPEN and SEARCH Ver.2.2.0
+BkZOO! URL OPEN and SEARCH Ver.2.3.0
 
 BkZOO! ‚ÍA‰º‹L‚Ì‹@”\‚ðBecky!‚É’Ç‰Á‚µ‚Ü‚·B
     › \\ ‚ÅŽn‚Ü‚é‘I‘ð•¶Žš—ñ‚ðƒpƒX‚Æ‚µ‚ÄƒGƒNƒXƒvƒ[ƒ‰[‚âƒ[ƒh‚È‚ÇŠeŽíƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÅŠJ‚­
@@ -43,6 +43,10 @@ BkZOO! Ver.1.x ‚ð‚²—˜—p‚Ì•û‚ÍA‚¨Žè”‚Å‚·‚ªAŽè“®‚ÅƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢
 
 
 •ÏX—š—ð
+  2018/01/14 Version 2.3.0
+    [‹@”\] IE‚ÅŠJ‚­‹@”\‚ð’Ç‰Á
+    [ƒoƒO] WixƒCƒ“ƒXƒg[ƒ‰[‚ÌC•œ‹@”\‚ð—}Ž~
+
   2017/08/26 Version 2.2.0
     [‹@”\] ˆø—p•„‚Ì '|' ‚àƒXƒLƒbƒv‚·‚é‚æ‚¤‚ÉC³
     [‚»‚Ì‘¼] boostƒ‰ƒCƒuƒ‰ƒŠ‚ðŽg‚í‚È‚¢‚æ‚¤‚ÉC³
