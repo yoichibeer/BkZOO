@@ -58,7 +58,8 @@ BOOL APIENTRY DllMain(HANDLE hModule,
 
             // ログ設定
             fs::path modulePath = ::bkzoo::util::PathUtils::modulePath(::hModuleBkZOO);
-            const fs::path logPath = modulePath.parent_path() / modulePath.stem() / modulePath.filename();
+            fs::path logPath = modulePath.parent_path() / modulePath.stem() / modulePath.filename();
+            logPath.replace_extension(L".log");
             Logger::createInstanceCallOnceFirst(logPath.wstring());
             Logger::instance().setMaximumOutputLogLevel(LogLevel::Error); ///< @todo ここでConfigから取得したものを設定することで出力するログレベルを外部から変更可能。Configの実装してないので必要。
         }
