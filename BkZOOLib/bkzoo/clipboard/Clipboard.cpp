@@ -65,6 +65,7 @@ namespace bkzoo
                 /// @note (yoichi) 2018/01/21 文字列選択してSendMessage送っているのにGetClipboardData()が、
                 /// nullptrを返すことがあって、その場合は右クリックでメニューに追加されない。
                 /// ただ、以下で::GetLastError()は0を返却するため原因が不明。
+                /// SendMessage() の前でSleepするとなぜか防げるためとりあえず実施。
                 LPVOID lpMessageBuffer = nullptr;
                 const DWORD lastError = ::GetLastError();
                 LOG_ERROR << "GetClipboardData() failed. GetLastError:" << lastError;

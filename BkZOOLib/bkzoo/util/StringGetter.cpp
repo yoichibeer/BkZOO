@@ -66,6 +66,12 @@ namespace bkzoo
             // RevertClipboardは現在のクリップボードのデータをバックアップし、スコープ抜ける際に復元
             clipboard::RevertClipboard revertClipboard(hWnd);
 
+            /// @note (yoichi) 2018/01/21 SendMessage()の後のgetClipboardData()内の、
+            /// GetClipboardData()のエラーをなくすためにSleepする。
+            /// GetClipboardData()のエラー原因がまず不明。GetLastErrorで0が返ってきている。
+            /// またSendMessage()の前でSleepすると何故か防げるがその理由も不明。
+            ::Sleep(1);
+
             // Copyコマンド送って選択文字列取得
             const LRESULT ret = ::SendMessage(hWnd, WM_COMMAND, 0xE122, 0);
             if ((ret != S_OK) && (ret != S_FALSE))
