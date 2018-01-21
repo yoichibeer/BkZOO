@@ -27,6 +27,8 @@ TEST(Stream, append)
     logStream << bkzFlush;
     logStream << 1;
     logStream << 2U;
+    logStream << 1L;
+    logStream << 2LU;
     logStream << 4.4f;
     logStream << 3.3;
     logStream << "HELLO";
@@ -38,6 +40,6 @@ TEST(Stream, append)
     logStream << bkzEndl;
 
     const std::wstring actual = stringFromFile(LOG_FILE_NAME);
-    EXPECT_EQ(L"124.403.300HELLOucstringwstring12345678\n", actual);
+    EXPECT_EQ(L"12124.403.300HELLOucstringwstring12345678\n", actual);
 }
 

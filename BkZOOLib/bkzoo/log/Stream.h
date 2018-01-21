@@ -27,6 +27,8 @@ namespace bkzoo
 
             virtual Stream& operator<<(int val) = 0;
             virtual Stream& operator<<(unsigned int val) = 0;
+            virtual Stream& operator<<(long val) = 0;
+            virtual Stream& operator<<(unsigned long val) = 0;
             virtual Stream& operator<<(float val) = 0;
             virtual Stream& operator<<(double val) = 0;
             virtual Stream& operator<<(const char* val) = 0;
@@ -56,6 +58,8 @@ namespace bkzoo
 
             virtual Stream& operator<<(int val) override;
             virtual Stream& operator<<(unsigned int val) override;
+            virtual Stream& operator<<(long val) override;
+            virtual Stream& operator<<(unsigned long val) override;
             virtual Stream& operator<<(float val) override;
             virtual Stream& operator<<(double val) override;
             virtual Stream& operator<<(const char* val) override;
@@ -86,6 +90,8 @@ namespace bkzoo
 
             virtual Stream& operator<<(int val) override;
             virtual Stream& operator<<(unsigned int val) override;
+            virtual Stream& operator<<(long val) override;
+            virtual Stream& operator<<(unsigned long val) override;
             virtual Stream& operator<<(float val) override;
             virtual Stream& operator<<(double val) override;
             virtual Stream& operator<<(const char* val) override;

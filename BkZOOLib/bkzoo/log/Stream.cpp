@@ -66,6 +66,16 @@ namespace bkzoo
             stringBuffer_.append(buffer_thl_);
             return *this;
         }
+        Stream& LogStream::operator<<(long val)
+        {
+            *this << static_cast<int>(val);
+            return *this;
+        }
+        Stream& LogStream::operator<<(unsigned long val)
+        {
+            *this << static_cast<unsigned int>(val);
+            return *this;
+        }
         Stream& LogStream::operator<<(float val)
         {
             buffer_thl_.reset();
@@ -167,6 +177,14 @@ namespace bkzoo
             return *this;
         }
         Stream& NullStream::operator<<(unsigned int)
+        {
+            return *this;
+        }
+        Stream& NullStream::operator<<(long)
+        {
+            return *this;
+        }
+        Stream& NullStream::operator<<(unsigned long)
         {
             return *this;
         }

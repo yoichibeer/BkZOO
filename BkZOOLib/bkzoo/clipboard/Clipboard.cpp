@@ -7,9 +7,12 @@
 
 #include "Clipboard.h"
 
+#include "bkzoo_string.h"
 #include "bkzoo_log.h"
 
 #include <stdexcept>
+
+#include <iostream>
 
 #include <cassert>
 #include "debug/detect_memory_leak.h"
@@ -30,10 +33,11 @@ namespace bkzoo
         {
             for (int i = 0; i < LOOP_NUM; ++i)
             {
-                if (::OpenClipboard(hWnd) != FALSE)
-                {
+                // OpenClipboard()に失敗することがあるので繰り返す。
+                if (::OpenClipboard(hWnd) == TRUE)
                     return;
-                }
+
+                LOG_INFO << "i=[" << i << "]";
                 ::Sleep(SLEEP_TIME_ms);
             }
 
@@ -51,24 +55,46 @@ namespace bkzoo
         {
             if (isClosed_ == TRUE)
             {
+                LOG_INFO << "isClosed_ is true.";
                 return std::wstring();
             }
 
-            HANDLE hText = ::GetClipboardData(CF_UNICODETEXT);
-            if (hText == nullptr)
+            HANDLE hClipBoardText = ::GetClipboardData(CF_UNICODETEXT);
+            if (hClipBoardText == nullptr)
             {
+                /// @note (yoichi) 2018/01/21 文字列選択してSendMessage送っているのにGetClipboardData()が、
+                /// nullptrを返すことがあって、その場合は右クリックでメニューに追加されない。
+                /// ただ、以下で::GetLastError()は0を返却するため原因が不明。
+                LPVOID lpMessageBuffer = nullptr;
+                const DWORD lastError = ::GetLastError();
+                LOG_ERROR << "GetClipboardData() failed. GetLastError:" << lastError;
+                ::FormatMessage(
+                    FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM,
+                    NULL,
+                    lastError,
+                    MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // デフォルト ユーザー言語
+                    reinterpret_cast<LPWSTR>(&lpMessageBuffer),
+                    0,
+                    nullptr
+                );
+                LOG_ERROR << wm_cast<std::string>(static_cast<LPCWSTR>(lpMessageBuffer));
+                // システムによって確保されたバッファを開放します。
+                ::LocalFree(lpMessageBuffer);
+
                 return std::wstring();
             }
 
-            const std::wstring str(static_cast<wchar_t*>(::GlobalLock(hText)));
-            ::GlobalUnlock(hText);
-            return str;
+            const std::wstring clipboardData(static_cast<wchar_t*>(::GlobalLock(hClipBoardText)));
+            ::GlobalUnlock(hClipBoardText);
+            LOG_INFO << "clipboardData=" << clipboardData;
+            return clipboardData;
         }
 
         BOOL ScopedClipboard::emptyClipboard() const
         {
             if (isClosed_ == TRUE)
             {
+                LOG_INFO << "isClosed_ is true.";
                 return FALSE;
             }
 
@@ -79,6 +105,7 @@ namespace bkzoo
         {
             if (isClosed_ == TRUE)
             {
+                LOG_INFO << "isClosed_ is true.";
                 return nullptr;
             }
 
@@ -95,9 +122,10 @@ namespace bkzoo
             ::GlobalUnlock(hText);
 
             // クリップボードにセット
-            HANDLE handle = ::SetClipboardData(CF_UNICODETEXT, hText);
+            const HANDLE handle = ::SetClipboardData(CF_UNICODETEXT, hText);
             if (handle == nullptr)
             {
+                //　SetClipboardData()に成功したらリソース管理はシステムにまかせるが、失敗したら自前でFreeする。
                 ::GlobalFree(hText);
             }
 
@@ -108,11 +136,17 @@ namespace bkzoo
         {
             if (isClosed_ == TRUE)
             {
+                LOG_INFO << "isClosed_ is true.";
                 return FALSE;
             }
 
             isClosed_ = ::CloseClipboard();
-            return isClosed_;
+            if (isClosed_ == TRUE)
+                return TRUE;
+
+            LOG_ERROR << "close() failed";
+            isClosed_ = TRUE;
+            return TRUE;
         }
 
 
@@ -123,18 +157,15 @@ namespace bkzoo
 
             // RevertClipboardスコープを抜ける際に復帰する値を取得する
             clipboardData_ = scopedClipboard.getClipboardData();
-            scopedClipboard.emptyClipboard();
-
-            if (scopedClipboard.close() == FALSE)
-            {
-                return;
-            }
+            if (scopedClipboard.emptyClipboard() == FALSE)
+                LOG_ERROR << "emptyClipboard() failed.";
         }
 
         RevertClipboard::~RevertClipboard()
         {
             if (reverted_ == TRUE)
             {
+                LOG_INFO << "reverted_ is true.";
                 return;
             }
 
@@ -151,20 +182,23 @@ namespace bkzoo
 
         void RevertClipboard::revert()
         {
+            if (reverted_ == TRUE)
+                return;
+
+            reverted_ = TRUE;
+
             ScopedClipboard scopedClipboard(hWnd_);
 
             // RevertClipboard呼び出し前のクリップボードに値があってもなくても共通する処理として空にする
-            scopedClipboard.emptyClipboard();
+            if (scopedClipboard.emptyClipboard() == FALSE)
+                LOG_ERROR << "emptyClipboard() failed.";
 
             // RevertClipboard呼び出し前が空の場合
             if (clipboardData_.empty())
-            {
                 return;
-            }
 
             // RevertClipboard呼び出し前に値があった場合は復帰する
             scopedClipboard.setClipboardData(clipboardData_);
-            reverted_ = TRUE;
         }
 
     }

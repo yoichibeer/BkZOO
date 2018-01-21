@@ -62,8 +62,10 @@ namespace bkzoo
 
                 // 選択文字列があるか？（選択文字列からは空白等は除去）
                 const std::wstring selectedString = StringGetter::removedSpaceText(StringGetter::selectedText(hWnd));
+                LOG_INFO << selectedString;
                 if (selectedString.empty())
                 {
+                    LOG_WARNING << "selectedString is empty.";
                     return TRUE;
                 }
 

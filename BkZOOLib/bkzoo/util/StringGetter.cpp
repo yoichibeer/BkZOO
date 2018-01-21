@@ -10,6 +10,7 @@
 #include "clipboard/Clipboard.h"
 
 #include "bkzoo_string.h"
+#include "bkzoo_log.h"
 
 #include <BeckyAPI.h>
 
@@ -35,7 +36,7 @@ namespace bkzoo
             }
 
             // 選択文字列を表示用に加工（文字列の長さが長い場合に短縮形にする）
-            std::wstring limitedLengthString = (inputString.length() <= limiterLength)
+            const std::wstring limitedLengthString = (inputString.length() <= limiterLength)
                 ? inputString
                 : inputString.substr(0, limiterLength - lastLength - 1).append(L"…").append(inputString.substr(inputString.length() - lastLength));
             return limitedLengthString;
@@ -44,54 +45,54 @@ namespace bkzoo
 
         std::wstring StringGetter::removedSpaceText(const std::wstring& inputString)
         {
-            std::wstring removedSpaceString(inputString);
+            std::wstring removedSpaceText(inputString);
 
             // 選択文字列の最初と最後の空白（空白、改行、TAFなど）を削除
-            string::StringUtils::trim(removedSpaceString);
+            string::StringUtils::trim(removedSpaceText);
 
             // 選択文字列の途中の改行を削除
-            std::wregex replace_reg(L"[\\n\\r]+");
-            removedSpaceString = std::regex_replace(removedSpaceString, replace_reg, L"");
+            const std::wregex replace_reg(L"[\\n\\r]+");
+            removedSpaceText = std::regex_replace(removedSpaceText, replace_reg, L"");
 
-            return removedSpaceString;
+            LOG_INFO << "removedSpaceText=" << removedSpaceText;
+            return removedSpaceText;
         }
 
 
         std::wstring StringGetter::selectedText(HWND hWnd)
         {
-
-            std::wstring selectedString;
+            LOG_INFO << "hWnd=" << hWnd;
 
             // RevertClipboardは現在のクリップボードのデータをバックアップし、スコープ抜ける際に復元
             clipboard::RevertClipboard revertClipboard(hWnd);
 
             // Copyコマンド送って選択文字列取得
-            ::SendMessage(hWnd, WM_COMMAND, 0xE122, 0);
+            const LRESULT ret = ::SendMessage(hWnd, WM_COMMAND, 0xE122, 0);
+            if ((ret != S_OK) && (ret != S_FALSE))
+                LOG_ERROR << "ret=" << ret << ", SendMessage failed.";
 
             // Clipboardにコピーされた選択文字列取得
-            clipboard::ScopedClipboard scopedClipboard(hWnd);
-            selectedString = scopedClipboard.getClipboardData();
-            scopedClipboard.close();
+            const clipboard::ScopedClipboard scopedClipboard(hWnd);
+            const std::wstring selectedText = scopedClipboard.getClipboardData();
 
-            return selectedString;
+            LOG_INFO << "selectedText=" << selectedText;
+            return selectedText;
         }
 
 
         std::wstring StringGetter::clipboardText(HWND hWnd)
         {
-
-            std::wstring clipboardText;
-
             if (!::IsClipboardFormatAvailable(CF_UNICODETEXT))
             {
-                return clipboardText;
+                LOG_INFO << "IsClipboardFormatAvailable(IsClipboardFormatAvailable) return false";
+                return std::wstring();
             }
 
             // Clipboardにコピーされた文字列取得
-            clipboard::ScopedClipboard scopedClipboard(hWnd);
-            clipboardText = scopedClipboard.getClipboardData();
-            scopedClipboard.close();
+            const clipboard::ScopedClipboard scopedClipboard(hWnd);
+            const std::wstring clipboardText = scopedClipboard.getClipboardData();
 
+            LOG_INFO << "clipboardText=" << clipboardText;
             return clipboardText;
         }
 
