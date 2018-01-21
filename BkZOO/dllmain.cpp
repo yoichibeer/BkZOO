@@ -9,6 +9,7 @@
 #include "mouse/MouseHook.h"
 
 #include "config/ConfigService.h"
+#include "config/Config.h"
 
 #include "bkzoo_log.h"
 
@@ -57,11 +58,10 @@ BOOL APIENTRY DllMain(HANDLE hModule,
 
 
             // ログ設定
-            fs::path modulePath = ::bkzoo::util::PathUtils::modulePath(::hModuleBkZOO);
-            fs::path logPath = modulePath.parent_path() / modulePath.stem() / modulePath.filename();
-            logPath.replace_extension(L".log");
+            const fs::path modulePath = ::bkzoo::util::PathUtils::modulePath(::hModuleBkZOO);
+            const fs::path logPath = modulePath.parent_path() / modulePath.stem() / modulePath.filename().replace_extension(L".log");
             Logger::createInstanceCallOnceFirst(logPath.wstring());
-            Logger::instance().setMaximumOutputLogLevel(LogLevel::Error); ///< @todo ここでConfigから取得したものを設定することで出力するログレベルを外部から変更可能。Configの実装してないので必要。
+            Logger::instance().setMaximumOutputLogLevel(bkzoo::config::Config::instance().logLevel());
         }
         catch (...)
         {
