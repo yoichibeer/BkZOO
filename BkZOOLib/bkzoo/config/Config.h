@@ -10,6 +10,8 @@
 
 #include <Windows.h>
 
+#include "log/LogLevel.h"
+
 #include <string>
 #include <vector>
 #include <map>
@@ -72,6 +74,10 @@ namespace bkzoo
             bool warningOpenUrl_bool() const;
             void setWarningOpenUrl(const std::wstring& warningOpenUrl);
 
+            const std::wstring& logLevel() const;
+            log::LogLevel logLevel_enum() const;
+            void setLogLevel(const std::wstring& logLevel);
+
             // for test
             //bool operator==(const General& lhs) const;
 
@@ -83,6 +89,7 @@ namespace bkzoo
             std::wstring version_;
             std::wstring checkBeckyUpdate_;
             std::wstring warningOpenUrl_;
+            std::wstring logLevel_;
         };
 
         enum class MethodType : int
@@ -193,6 +200,10 @@ namespace bkzoo
             void setCtrlTripleClick(bool doubleClick);
             bool warningOpenUrl() const;
             void setWarningOpenUrl(bool warningOpenUrl);
+
+            // logLevel
+            log::LogLevel logLevel() const;
+            void setLogLevel(log::LogLevel logLevel);
 
             // Sites
             const SiteList& sites() const;

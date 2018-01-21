@@ -67,6 +67,7 @@ TEST(ConfigFactory, create)
     general.setVersion(L"1.2.3");
     general.setCheckBeckyUpdate(L"false");
     general.setWarningOpenUrl(L"false");
+    general.setLogLevel(L"4");
 
     general.setShortcut(config::App::Browzer, L"R");
     general.setShortcut(config::App::Explorer, L"X");
@@ -241,6 +242,7 @@ TEST(ConfigFactory, create)
     EXPECT_EQ(L"1.2.3", config->version());
     EXPECT_FALSE(config->checkBeckyUpdate());
     EXPECT_FALSE(config->warningOpenUrl());
+    EXPECT_EQ(bkzoo::log::LogLevel::Info, config->logLevel());
 
     EXPECT_EQ(L'R', config->shortcut(config::App::Browzer));
     EXPECT_EQ(L'X', config->shortcut(config::App::Explorer));

@@ -129,6 +129,43 @@ namespace bkzoo
         }
 
 
+        log::LogLevel Config::logLevel() const
+        {
+            return general_.logLevel_enum();
+        }
+        void Config::setLogLevel(log::LogLevel logLevel)
+        {
+            std::wstring logLevelStr;
+            switch (logLevel)
+            {
+            case log::LogLevel::Non:
+                logLevelStr = L"0";
+                break;
+            case log::LogLevel::Fatal:
+                logLevelStr = L"1";
+                break;
+            case log::LogLevel::Error:
+                logLevelStr = L"2";
+                break;
+            case log::LogLevel::Warning:
+                logLevelStr = L"3";
+                break;
+            case log::LogLevel::Info:
+                logLevelStr = L"4";
+                break;
+            case log::LogLevel::Debug:
+                logLevelStr = L"5";
+                break;
+            case log::LogLevel::Trace:
+                logLevelStr = L"6";
+                break;
+            default:
+                assert(false);
+                // do nothing
+            }
+            general_.setLogLevel(logLevelStr);
+        }
+
 
         const std::wstring& Site::clickable() const
         {
@@ -164,7 +201,6 @@ namespace bkzoo
         {
             return encode_;
         }
-
         int Site::encode_int() const
         {
             if (encode_ == L"UTF-8")
@@ -413,6 +449,41 @@ namespace bkzoo
         void General::setWarningOpenUrl(const std::wstring& warningOpenUrl)
         {
             warningOpenUrl_ = warningOpenUrl;
+        }
+
+
+        const std::wstring& General::logLevel() const
+        {
+            return logLevel_;
+        }
+        log::LogLevel General::logLevel_enum() const
+        {
+            if (logLevel_ == L"0")
+                return log::LogLevel::Non;
+
+            if (logLevel_ == L"1")
+                return log::LogLevel::Fatal;
+
+            if (logLevel_ == L"2")
+                return log::LogLevel::Error;
+
+            if (logLevel_ == L"3")
+                return log::LogLevel::Warning;
+
+            if (logLevel_ == L"4")
+                return log::LogLevel::Info;
+
+            if (logLevel_ == L"5")
+                return log::LogLevel::Debug;
+
+            if (logLevel_ == L"6")
+                return log::LogLevel::Trace;
+
+            return log::LogLevel::Error; // default value
+        }
+        void General::setLogLevel(const std::wstring& logLevel)
+        {
+            logLevel_ = logLevel;
         }
 
 

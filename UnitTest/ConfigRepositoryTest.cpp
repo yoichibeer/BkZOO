@@ -22,6 +22,7 @@ TEST(ConfigRepository, defaultValue)
     EXPECT_EQ(generalDefault.version(), general.version());
     EXPECT_EQ(generalDefault.checkBeckyUpdate(), general.checkBeckyUpdate());
     EXPECT_EQ(generalDefault.warningOpenUrl(), general.warningOpenUrl());
+    EXPECT_EQ(generalDefault.logLevel(), general.logLevel());
 
     EXPECT_EQ(generalDefault.shortcut(App::Browzer), general.shortcut(App::Browzer));
     EXPECT_EQ(generalDefault.shortcut(App::Explorer), general.shortcut(App::Explorer));
@@ -62,6 +63,7 @@ TEST(ConfigRepository, readGeneral)
     EXPECT_EQ(L"2.72.01", general.version());
     EXPECT_EQ(L"true", general.checkBeckyUpdate());
     EXPECT_EQ(L"false", general.warningOpenUrl());
+    EXPECT_EQ(L"2", general.logLevel());
 
     EXPECT_EQ(L'1', general.shortcut(App::Browzer));
     EXPECT_EQ(L'3', general.shortcut(App::Explorer));
@@ -217,6 +219,7 @@ TEST(ConfigRepository, writeGeneral)
         general.setVersion(L"2.72.01");
         general.setCheckBeckyUpdate(L"false");
         general.setWarningOpenUrl(L"false");
+        general.setLogLevel(L"5");
 
         general.setShortcut(App::Browzer, L"0");
         general.setShortcut(App::Explorer, L"1");
@@ -246,6 +249,8 @@ TEST(ConfigRepository, writeGeneral)
         EXPECT_EQ(L"2.72.01", general.version());
         EXPECT_EQ(L"false", general.checkBeckyUpdate());
         EXPECT_EQ(L"false", general.warningOpenUrl());
+        EXPECT_EQ(L"5", general.logLevel());
+        EXPECT_EQ(bkzoo::log::LogLevel::Debug, general.logLevel_enum());
 
         EXPECT_EQ(L'0', general.shortcut(App::Browzer));
         EXPECT_EQ(L'1', general.shortcut(App::Explorer));

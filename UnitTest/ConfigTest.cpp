@@ -218,6 +218,32 @@ TEST(General, warningOpenUrl)
 }
 
 
+TEST(General, logLevel)
+{
+    General general;
+
+    // default
+    EXPECT_EQ(L"", general.logLevel());
+    EXPECT_EQ(bkzoo::log::LogLevel::Error, general.logLevel_enum());
+    EXPECT_EQ(L"", general.logLevel());
+
+    // Fatal
+    general.setLogLevel(L"1");
+    EXPECT_EQ(bkzoo::log::LogLevel::Fatal, general.logLevel_enum());
+    EXPECT_EQ(L"1", general.logLevel());
+
+    // Trace
+    general.setLogLevel(L"6");
+    EXPECT_EQ(bkzoo::log::LogLevel::Trace, general.logLevel_enum());
+    EXPECT_EQ(L"6", general.logLevel());
+
+    // 異常系
+    general.setLogLevel(L"-1");
+    EXPECT_EQ(bkzoo::log::LogLevel::Error, general.logLevel_enum());
+    EXPECT_EQ(L"-1", general.logLevel());
+}
+
+
 TEST(Site, presetid)
 {
     Site site;
@@ -464,6 +490,7 @@ TEST_F(ConfigTest, config)
         general.setVersion(L"1.2.3");
         general.setCheckBeckyUpdate(L"false");
         general.setWarningOpenUrl(L"false");
+        general.setLogLevel(L"3");
 
         general.setShortcut(App::Browzer, L"B");
         general.setShortcut(App::Explorer, L"E");
@@ -523,6 +550,7 @@ TEST_F(ConfigTest, config)
     EXPECT_EQ(L"1.2.3", config_.version());
     EXPECT_FALSE(config_.checkBeckyUpdate());
     EXPECT_FALSE(config_.warningOpenUrl());
+    EXPECT_EQ(bkzoo::log::LogLevel::Warning, config_.logLevel());
 
     EXPECT_EQ(L'B', config_.shortcut(App::Browzer));
     EXPECT_EQ(L'E', config_.shortcut(App::Explorer));
@@ -566,4 +594,38 @@ TEST_F(ConfigTest, config)
         EXPECT_EQ(L"Yahoo!検索", site->title());
         EXPECT_EQ(L"http://www.yahoo.co.jp/{}", site->url());
     }
+
+    // ちょっと変更してテスト
+    config_.setTripleClick(false);
+    EXPECT_FALSE(config_.tripleClick());
+
+    config_.setCtrlDoubleClick(true);
+    EXPECT_TRUE(config_.ctrlDoubleClick());
+
+    config_.setCtrlTripleClick(false);
+    EXPECT_FALSE(config_.ctrlTripleClick());
+
+    config_.setVersion(L"1.2.4");
+    EXPECT_EQ(L"1.2.4", config_.version());
+
+    config_.setCheckBeckyUpdate(true);
+    EXPECT_TRUE(config_.checkBeckyUpdate());
+
+    config_.setWarningOpenUrl(true);
+    EXPECT_TRUE(config_.warningOpenUrl());
+
+    config_.setLogLevel(bkzoo::log::LogLevel::Non);
+    EXPECT_EQ(bkzoo::log::LogLevel::Non, config_.logLevel());
+    config_.setLogLevel(bkzoo::log::LogLevel::Fatal);
+    EXPECT_EQ(bkzoo::log::LogLevel::Fatal, config_.logLevel());
+    config_.setLogLevel(bkzoo::log::LogLevel::Error);
+    EXPECT_EQ(bkzoo::log::LogLevel::Error, config_.logLevel());
+    config_.setLogLevel(bkzoo::log::LogLevel::Warning);
+    EXPECT_EQ(bkzoo::log::LogLevel::Warning, config_.logLevel());
+    config_.setLogLevel(bkzoo::log::LogLevel::Info);
+    EXPECT_EQ(bkzoo::log::LogLevel::Info, config_.logLevel());
+    config_.setLogLevel(bkzoo::log::LogLevel::Debug);
+    EXPECT_EQ(bkzoo::log::LogLevel::Debug, config_.logLevel());
+    config_.setLogLevel(bkzoo::log::LogLevel::Trace);
+    EXPECT_EQ(bkzoo::log::LogLevel::Trace, config_.logLevel());
 }

@@ -65,6 +65,7 @@ namespace bkzoo
             const IniUnit INIUNIT_version = { APP_general, L"version", L"" };
             const IniUnit INIUNIT_checkBeckyUpdate = { APP_general, L"checkBeckyUpdate", L"" };
             const IniUnit INIUNIT_warningopenurl = { APP_general, L"warningopenurl", L"" };
+            const IniUnit INIUNIT_logLevel = { APP_general, L"logLevel", L"" };
 
 
             //
@@ -136,6 +137,7 @@ namespace bkzoo
                 general.setVersion(standardRepository_.readValue(INIUNIT_version));
                 general.setCheckBeckyUpdate(standardRepository_.readValue(INIUNIT_checkBeckyUpdate));
                 general.setWarningOpenUrl(standardRepository_.readValue(INIUNIT_warningopenurl));
+                general.setLogLevel(standardRepository_.readValue(INIUNIT_logLevel));
 
                 setShortcutToGeneral(&general, App::Browzer);
                 setShortcutToGeneral(&general, App::Explorer);
@@ -187,6 +189,7 @@ namespace bkzoo
             standardRepository_.writeValue(INIUNIT_version, general.version());
             standardRepository_.writeValue(INIUNIT_checkBeckyUpdate, general.checkBeckyUpdate());
             standardRepository_.writeValue(INIUNIT_warningopenurl, general.warningOpenUrl());
+            standardRepository_.writeValue(INIUNIT_logLevel, general.logLevel());
         }
 
         void ConfigRepository::removeStandardSites() const
