@@ -60,7 +60,7 @@ namespace bkzoo
                 if (++failedCount == 3)
                 {
                     if (StringGetter::selectedText(simpleParam.hWnd).empty())
-                        LOG_WARNING << __FUNCTION__ << ": param_.string.empty(), param_.hWnd=" << simpleParam.hWnd << ", failedCount=" << failedCount;
+                        LOG_WARNING << ": param_.string.empty(), param_.hWnd=" << simpleParam.hWnd << ", failedCount=" << failedCount;
                     return false;
                 }
             }

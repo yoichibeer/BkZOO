@@ -32,16 +32,16 @@ namespace bkzoo
         ExplorerCommand::ExplorerCommand(const SimpleParam& param)
             : param_(param)
         {
-            LOG_INFO << __FUNCTION__ << "param.hWnd=" << param.hWnd << "param.string=" << wm_cast<std::string>(param.string);
+            LOG_INFO << "param.hWnd=" << param.hWnd << "param.string=" << wm_cast<std::string>(param.string);
         }
 
         bool ExplorerCommand::execute()
         {
-            LOG_INFO << __FUNCTION__ << "----START----";
+            LOG_INFO << "----START----";
             const url::URL url(param_.string, Scheme::FILE_URI_LOCALPATH | Scheme::FILE_URI_UNC);
             if (!url.validate())
             {
-                LOG_WARNING << __FUNCTION__ << "param_.hWnd=" << param_.hWnd << "param_.string=" << wm_cast<std::string>(param_.string);
+                LOG_WARNING << "param_.hWnd=" << param_.hWnd << "param_.string=" << wm_cast<std::string>(param_.string);
                 return false;
             }
 
@@ -54,7 +54,7 @@ namespace bkzoo
             std::wsmatch resultsFileOrDir;
             if (!std::regex_search(urlString, resultsFileOrDir, fileOrDirRegex))
             {
-                LOG_ERROR << __FUNCTION__ << "urlString=" << wm_cast<std::string>(urlString);
+                LOG_ERROR << "urlString=" << wm_cast<std::string>(urlString);
                 assert(false);
                 return false;
             }
@@ -82,7 +82,7 @@ namespace bkzoo
                 const std::experimental::filesystem::path fileOrDirPath(fileOrDirString);
                 if (!std::experimental::filesystem::exists(fileOrDirPath))
                 {
-                    LOG_ERROR << __FUNCTION__ << "fileOrDirPath=" << fileOrDirPath.string();
+                    LOG_ERROR << "fileOrDirPath=" << fileOrDirPath.string();
                     assert(false);
                     return false;
                 }
@@ -112,10 +112,10 @@ namespace bkzoo
             const HINSTANCE hInstance = ::ShellExecute(param_.hWnd, L"open", urlString.c_str(), nullptr, nullptr, SW_SHOW);
             if (reinterpret_cast<const size_t>(hInstance) <= 32U)
             {
-                LOG_ERROR << __FUNCTION__ << "ShellExecute() : " << reinterpret_cast<const size_t>(hInstance);
+                LOG_ERROR << "ShellExecute() : " << reinterpret_cast<const size_t>(hInstance);
             }
 
-            LOG_INFO << __FUNCTION__ << " -----END-----";
+            LOG_INFO << " -----END-----";
             return true;
         }
 
