@@ -988,6 +988,18 @@ namespace tut
 
             ensure_equals(M(__LINE__), url.getValidSchemes(), 0UL);
         }
+        {
+            std::wstring inputUrl(L"file:\\\\localhost\\bkzoo_test_share_folder\\hello\\#2\\aaa");
+            URL url(inputUrl, Scheme::FILE_URI_UNC);
+            bool validUrl = url.validate();
+            ensure(M(__LINE__), validUrl);
+
+            std::wstring outputUrl = url.getURL();
+            std::wstring expectedUrl(L"file:\\\\localhost\\bkzoo_test_share_folder\\hello\\#2\\aaa");
+            ensure_equals(M(__LINE__), outputUrl, expectedUrl);
+
+            ensure_equals(M(__LINE__), url.getValidSchemes(), Scheme::FILE_URI_UNC);
+        }
     }
 
 

@@ -88,15 +88,6 @@ namespace bkzoo
                 }
             }
 
-            // file:\\localhost\xxx のようにlocalhost\xxxの場合だけ file: があると開けないから除去して\\localhost\xxxに変換
-            const std::wregex localhostRegex(
-                L"^[fF][iI][lL][eE]:?([\\\\/]{2}[lL][oO][cC][aA][lL][hH][oO][sS][tT](:[0-9]+)?([\\\\/][^\"|:*<>?]*))$");
-            std::wsmatch results;
-            if (std::regex_search(urlString, results, localhostRegex))
-            {
-                urlString = results[1].str();
-            }
-
             // 警告表示
             //if (!util::okCancelWarningMessageBox(param_.hWnd, IDS_STRING_ERR_MESSAGE_WARNING_OPEN_URL))
             //{
@@ -109,7 +100,9 @@ namespace bkzoo
                 util::messageBox(param_.hWnd, IDS_STRING_ERR_MESSAGE_TRUNCATED_FILE_URI);
             }
 
-            const HINSTANCE hInstance = ::ShellExecute(param_.hWnd, L"open", urlString.c_str(), nullptr, nullptr, SW_SHOW);
+            // urlStringからfile:を除去したのがfileOrDirString。
+            // file: があると # を含むパスをエクスプローラーで開けないため file: を除去したパスを ShellExecute に渡す。
+            const HINSTANCE hInstance = ::ShellExecute(param_.hWnd, L"open", fileOrDirString.c_str(), nullptr, nullptr, SW_SHOW);
             if (reinterpret_cast<const size_t>(hInstance) <= 32U)
             {
                 LOG_ERROR << "ShellExecute() : " << reinterpret_cast<const size_t>(hInstance);
