@@ -328,7 +328,7 @@ namespace bkzoo
             Registry registry(HKEY_CURRENT_USER, subKey);
             const HKEY hKey = registry.regOpenKey_READ();
             if (hKey == nullptr)
-                return false;
+                return true; // キーがないということはデフォルトをIEから変えてないということでIE決定。trueを返す。
 
             std::wstring defaultBrowzer;
             const bool success = registry.regQueryValue(L"Progid", defaultBrowzer);
@@ -346,18 +346,10 @@ namespace bkzoo
 
         bool Registry::isDefaultBrowzerIExplorer()
         {
-            // Windows 8 以降
+            // Windows 7、8、10
             if (isDefaultBrowzerIE(
                 L"Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\http\\UserChoice",
                 L"IE.HTTP"))
-            {
-                return true;
-            }
-
-            // Windows 7 以前
-            if (isDefaultBrowzerIE(
-                L"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.html\\UserChoice",
-                L"IE.AssocFile.HTM"))
             {
                 return true;
             }

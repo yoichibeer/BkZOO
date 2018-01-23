@@ -142,8 +142,14 @@ namespace bkzoo
                 return true;
             }
 
+            // COM使用開始
+            HRESULT h2r = ::CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
             // 単純にShellExecuteだと既にIE起動時に新規Tabでなくて新規Windowで開いてしまうので関数つくった。
             OpenIexplore(wm_cast<std::string>(url.getURL()), param_.hWnd);
+
+             // COM使用終了
+             ::CoUninitialize();
 
             return true;
         }
