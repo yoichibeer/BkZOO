@@ -14,6 +14,7 @@
     <ProjectGuid>{2B6D620C-2A4E-48A6-9644-0E57C8DCA59D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>PlugInSDK</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
