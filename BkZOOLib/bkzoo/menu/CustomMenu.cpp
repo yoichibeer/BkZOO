@@ -118,6 +118,13 @@ namespace bkzoo
                     if (success) ++insertPos;
                 }
 
+                // SeparatorをブラウザとIEで開くの間に挿入
+                if (insertPos > baseInsertPos)
+                {
+                    success = separator.insert(appendedMenu, insertPos);
+                    if (success) ++insertPos;
+                    baseInsertPos = insertPos; // reset
+                }
 
                 // IEで開く（デフォルトブラウザがIEなら表示しない）
                 {
