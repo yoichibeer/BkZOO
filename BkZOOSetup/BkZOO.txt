@@ -1,4 +1,4 @@
-BkZOO! URL OPEN and SEARCH Ver.2.3.0
+BkZOO! URL OPEN and SEARCH Ver.2.3.1
 
 BkZOO! ‚ÍA‰º‹L‚Ì‹@”\‚ðBecky!‚É’Ç‰Á‚µ‚Ü‚·B
     › \\ ‚ÅŽn‚Ü‚é‘I‘ð•¶Žš—ñ‚ðƒpƒX‚Æ‚µ‚ÄƒGƒNƒXƒvƒ[ƒ‰[‚âƒ[ƒh‚È‚ÇŠeŽíƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÅŠJ‚­
@@ -43,6 +43,12 @@ BkZOO! Ver.1.x ‚ð‚²—˜—p‚Ì•û‚ÍA‚¨Žè”‚Å‚·‚ªAŽè“®‚ÅƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢
 
 
 •ÏX—š—ð
+  2018/01/24 Version 2.3.1
+    [ƒoƒO] ƒƒOƒtƒ@ƒCƒ‹‚ÌŠg’£Žq‚ªdll‚¾‚Á‚½‚Ì‚Ålog‚ÉC³
+    [ƒoƒO] ‘I‘ð•¶Žš—ñ‚ÌŽæ“¾‚ÉŽ¸”s‚·‚é•s‹ï‡‚ðC³
+    [ƒoƒO] ‘I‘ð•¶Žš—ñ‚É'#'‚ªŠÜ‚Ü‚ê‚éê‡‚ÉƒGƒNƒXƒvƒ[ƒ‰[‚ÅŠJ‚¯‚È‚¢•s‹ï‡‚ðC³
+    [ƒoƒO] IE‚ÅŠJ‚­‹@”\‚ªWindows7‚Å³í‚É“®ì‚µ‚È‚¢•s‹ï‡‚ðC³
+
   2018/01/14 Version 2.3.0
     [‹@”\] IE‚ÅŠJ‚­‹@”\‚ð’Ç‰Á
     [ƒoƒO] WixƒCƒ“ƒXƒg[ƒ‰[‚ÌC•œ‹@”\‚ð—}Ž~
