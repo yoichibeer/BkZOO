@@ -15,8 +15,7 @@
 
 #include "bkzoo_log.h"
 
-#include <cassert>
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 namespace bkzoo
 {

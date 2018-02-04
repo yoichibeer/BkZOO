@@ -22,7 +22,7 @@
 #include <fstream>
 #include <regex>
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 extern CBeckyAPI beckyApi; // You can have only one instance in a project.
 

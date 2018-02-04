@@ -20,7 +20,7 @@ extern CBeckyAPI beckyApi;
 
 #include <utility>
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 using namespace bkzoo;
 

@@ -18,7 +18,7 @@ extern CBeckyAPI beckyApi;
 
 #include <shellapi.h>
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 BOOL bkzoo::setting::CheckBeckyUpdateForm::OnInitDialog(CWindow /* wndFocus */, LPARAM /* lInitParam */)
 {

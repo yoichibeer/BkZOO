@@ -9,7 +9,7 @@
 
 #include "bkzoo_log.h"
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 using namespace bkzoo::log;
 

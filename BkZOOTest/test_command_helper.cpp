@@ -11,7 +11,7 @@
 #include "command/helper/SearchWordHelper.h"
 #include "util/StringUtil.h"
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 using namespace bkzoo::command::helper;
 using namespace bkzoo::util;

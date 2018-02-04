@@ -14,7 +14,7 @@
 
 #include <shellapi.h>
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 void bkzoo::setting::SettingDlg::OnOK(UINT /* uNotifyCode */, int nID, CWindow /* wndCtl */)
 {

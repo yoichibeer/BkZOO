@@ -21,7 +21,7 @@
 #include "bkzoo_util.h"
 #include "bkzoo_log.h"
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 namespace bkzoo
 {

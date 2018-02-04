@@ -10,7 +10,7 @@
 #include "log/Stream.h"
 #include "bkzoo_log.h"
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 std::wstring stringFromFile(const std::wstring& filepath);
 void removeFile(const std::wstring& filepath);

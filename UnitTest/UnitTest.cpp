@@ -1,6 +1,6 @@
 ﻿#include <gtest/gtest.h>
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 int main(int argc, char* argv[])
 {

@@ -21,7 +21,7 @@
 
 #include <regex>
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 extern HMODULE hModuleBkZOO;
 extern ::bkzoo::util::TripleClickDetector tripleClickDetector;

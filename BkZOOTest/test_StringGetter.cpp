@@ -13,7 +13,7 @@
 #include "util/StringGetter.h"
 #include "clipboard/Clipboard.h"
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 using namespace bkzoo::clipboard;
 using namespace bkzoo::util;

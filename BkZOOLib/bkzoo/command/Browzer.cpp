@@ -12,7 +12,7 @@
 
 #include "resource.h"
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 namespace bkzoo
 {

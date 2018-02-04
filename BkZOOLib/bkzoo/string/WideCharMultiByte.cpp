@@ -13,8 +13,7 @@
 
 #include <vector>
 
-#include <cassert>
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 ::bkzoo::string::MlangApi mlang;
 

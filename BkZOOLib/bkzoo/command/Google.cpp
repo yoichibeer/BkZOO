@@ -16,8 +16,7 @@
 #include <sstream>
 #include <string>
 
-#include <cassert>
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 extern HMODULE hModuleBkZOO;
 

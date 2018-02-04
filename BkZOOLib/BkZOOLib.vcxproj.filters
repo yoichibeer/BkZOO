@@ -157,7 +157,7 @@
       <Filter>bkzoo</Filter>
     </ClInclude>
     <ClInclude Include="bkzoo\debug\detect_memory_leak.h">
-      <Filter>bkzoo\debug</Filter>
+      <Filter>bkzoo\for_debug</Filter>
     </ClInclude>
     <ClInclude Include="bkzoo\command\DoubleClick.h">
       <Filter>bkzoo\command</Filter>
@@ -308,9 +308,6 @@
     <Filter Include="bkzoo\menu">
       <UniqueIdentifier>{35574d18-042c-41d2-9c67-68da97c02aba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="bkzoo\debug">
-      <UniqueIdentifier>{0633ced8-0d6d-465f-a72b-8276668076e5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="bkzoo\string">
       <UniqueIdentifier>{5fbde880-1691-43a0-9612-4a8f2ce889c4}</UniqueIdentifier>
     </Filter>
@@ -328,6 +325,9 @@
     </Filter>
     <Filter Include="bkzoo\log">
       <UniqueIdentifier>{aa7a113e-973b-4838-947a-a1fb4c2bbd81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bkzoo\for_debug">
+      <UniqueIdentifier>{0633ced8-0d6d-465f-a72b-8276668076e5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

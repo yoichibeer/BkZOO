@@ -13,7 +13,7 @@
 #include <sstream> // statusbar()
 #include <regex> // for setShortcut()
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 namespace bkzoo
 {

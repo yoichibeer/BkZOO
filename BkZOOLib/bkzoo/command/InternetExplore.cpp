@@ -23,7 +23,7 @@
 #include <comdefsp.h>
 #include <atlbase.h> // for CComPtr
 
-#include "debug/detect_memory_leak.h"
+#include "for_debug/detect_memory_leak.h"
 
 namespace bkzoo
 {
