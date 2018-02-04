@@ -1,4 +1,3 @@
 missingIncludeSystem
-unmatchedSuppression:BkZOO/BeckyCallbacks.cpp
-unmatchedSuppression:BkZOO/dllmain.cpp
-unmatchedSuppression:BkZOOLib/bkzoo\log\Stream.cpp
+syntaxError:BkZOOTest/test_*
+unusedFunction:BkZOOTest\bkzoo_tut.cpp:15
