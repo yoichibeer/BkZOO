@@ -260,10 +260,11 @@ TEST(RegistryTest, warningOpenUrl)
 // isDefaultBrowzerIExplorer
 TEST(RegistryTest, isDefaultBrowzerIExplorer)
 {
-    bool ret = Registry::isDefaultBrowzerIExplorer();
+    // bool ret = 
+    Registry::isDefaultBrowzerIExplorer();
     // 以下、開発環境がChromeデフォルトなのでコメントアウト。一度だけIEデフォルトにして確認済み。
-    //EXPECT_TRUE(ret);
+    // EXPECT_TRUE(ret);
 
     // 必ずfalseになる。ret変数未使用のwarning回避目的。
-    EXPECT_FALSE(ret && !ret);
+    // EXPECT_FALSE(ret && !ret);
 }
