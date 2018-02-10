@@ -124,7 +124,7 @@ extern "C" {
     {
         ::strcpy(lpPlugInInfo->szPlugInName, "BkZOO! URL OPEN and SEARCH");
         ::strcpy(lpPlugInInfo->szVendor, "yoichibeer");
-        ::strcpy(lpPlugInInfo->szVersion, "Version 2.0.0");
+        ::strcpy(lpPlugInInfo->szVersion, "Version 2.4.0");
         ::strcpy(lpPlugInInfo->szDescription,
             "Enables Becky to perform various operations to the selected text.");
 

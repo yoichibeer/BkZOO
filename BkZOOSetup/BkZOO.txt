@@ -1,13 +1,13 @@
-BkZOO! URL OPEN and SEARCH Ver.2.3.1
+BkZOO! URL OPEN and SEARCH Ver.2.4.0
 
-BkZOO! ‚ÍA‰º‹L‚Ì‹@”\‚ðBecky!‚É’Ç‰Á‚µ‚Ü‚·B
-    › \\ ‚ÅŽn‚Ü‚é‘I‘ð•¶Žš—ñ‚ðƒpƒX‚Æ‚µ‚ÄƒGƒNƒXƒvƒ[ƒ‰[‚âƒ[ƒh‚È‚ÇŠeŽíƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÅŠJ‚­
-    › http‚È‚Ç‚ÅŽn‚Ü‚é‘I‘ð•¶Žš—ñ‚âIPŒ`Ž®‚Ì‘I‘ð•¶Žš—ñ‚ðƒuƒ‰ƒEƒU‚âFFFTPATeraTerm‚È‚ÇŠeŽíƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÅŠJ‚­
-    › ‘I‘ð•¶Žš—ñ‚ðGoogle‚È‚Ç”CˆÓ‚ÌƒTƒCƒg‚ÅŒŸõE–|–ó‚·‚é
-    › ŠeŽíŒ`Ž®‚ÌURL‚ð <file:// > ‚â < > ‚ÅˆÍ‚ñ‚Å“\‚è•t‚¯‚é
-    › Becky!‚Ìƒo[ƒWƒ‡ƒ“‚ªV‚µ‚­‚È‚Á‚½‚ç‚¨’m‚ç‚¹‚·‚é
-
-\\ ‚ÅŽn‚Ü‚éƒpƒX‚ÍƒtƒHƒ‹ƒ_–¼‚Ì•ÏX‚âˆÚ“®‚È‚Ç‚Å‘¶Ý‚µ‚È‚¢ƒpƒX‚É‚È‚Á‚Ä‚¢‚ÆŠJ‚¯‚È‚­‚È‚è‚Ü‚·BBkZOO!‚Í‘I‘ð•¶Žš—ñ‚ª‘¶Ý‚µ‚È‚¢ƒpƒX‚È‚ç‚Îã‚ÌŠK‘w‚ÌƒtƒHƒ‹ƒ_‚ð‡‚É‚½‚Ç‚Á‚Ä‘¶Ý‚·‚éƒtƒHƒ‹ƒ_‚ðŠJ‚«‚Ü‚·B
+BkZOO! ‚ÍA‘I‘ð‚µ‚½•¶Žš—ñ‚É‘Î‚µ‚ÄAŽŸ‚Ì•Ö—˜‚È‹@”\‚ðBecky!‚É’Ç‰Á‚µ‚Ü‚·B
+    › \\ ‚ÅŽn‚Ü‚é‘I‘ð•¶Žš—ñ‚ÌƒtƒHƒ‹ƒ_‚âƒtƒ@ƒCƒ‹‚ðƒGƒNƒXƒvƒ[ƒ‰[‚âƒ[ƒh‚È‚ÇŠeŽíƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÅŠJ‚­
+    › ‘I‘ð•¶Žš—ñ‚ª‘¶Ý‚µ‚È‚¢ƒtƒHƒ‹ƒ_‚âƒtƒ@ƒCƒ‹‚É‚È‚Á‚Ä‚¢‚½‚çã‚ÌŠK‘w‚ÌƒtƒHƒ‹ƒ_‚ð‡‚É‚½‚Ç‚Á‚Ä‘¶Ý‚·‚éƒtƒHƒ‹ƒ_‚ðŠJ‚­
+    › Google‚â‘¼‚ÌƒTƒCƒg‚Å‘I‘ð•¶Žš—ñ‚ðŒŸõE–|–ó‚·‚é
+    › ”ñí‚É‘½‚­‚ÌŒŸõE–|–óƒTƒCƒg‚ð’Ç‰Á‰Â”\
+    › ƒRƒs[‚µ‚½‹¤—LƒtƒHƒ‹ƒ_‚ÌƒpƒX‚É <file:// > ‚â < > ‚ÅˆÍ‚ñ‚Å“\‚è•t‚¯‚é
+    › http‚È‚Ç‚ÅŽn‚Ü‚é‘I‘ð•¶Žš—ñ‚ðƒuƒ‰ƒEƒU‚âFFFTPATeraTerm‚È‚ÇŠeŽíƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÅŠJ‚­
+    › i‚¨‚Ü‚¯jBecky!‚Ìƒo[ƒWƒ‡ƒ“‚ªV‚µ‚­‚È‚Á‚½‚ç‚¨’m‚ç‚¹‚·‚é
 
 ƒƒCƒ“ƒƒjƒ…[‚Ìuƒc[ƒ‹(T)v-uƒvƒ‰ƒOƒCƒ“‚ÌÝ’è(U)v‚©‚çuBkZOO! URL OPEN and SEARCHv‚ð‘I‘ð‚·‚é‚ÆBkZOO!‚ÌÝ’è‰æ–Ê‚ð•\Ž¦‚µ‚Ü‚·BÝ’è‰æ–Ê‚ÅBkZOO!‚ÅŽg‚¦‚é‹@”\‚ªˆê——‚Å‚«‚Ü‚·B‚²Ž¿–âE‚²—v–]‚È‚Ç‚ª‚ ‚è‚Ü‚µ‚½‚çVector‚ÌƒRƒƒ“ƒg—“‚É‚¨Šñ‚¹‚­‚¾‚³‚¢B
 
@@ -20,6 +20,7 @@ BkZOO! Ver.1.x ‚ð‚²—˜—p‚Ì•û‚ÍA‚¨Žè”‚Å‚·‚ªAŽè“®‚ÅƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢
 
 Žæ‚èˆµ‚¢Ží•Ê
     ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÍƒtƒŠ[ƒ\ƒtƒg‚Å‚·B
+    GitHub‚Åƒ\[ƒXƒR[ƒh‚ðŒöŠJ‚µ‚Ä‚¢‚Ü‚·iMIT LicensejB
     ŒÂl—˜—pA¤—p—˜—p‚ð–â‚í‚¸‚²—˜—p‚É§ŒÀ‚Í‚ ‚è‚Ü‚¹‚ñB
     ”z•z^“]Ú‚ÍŽ©—R‚Å‚·B
     ’˜ìŒ ‚Í yoichibeer ‚ª•Û—L‚µ‚Ü‚·B
@@ -43,6 +44,11 @@ BkZOO! Ver.1.x ‚ð‚²—˜—p‚Ì•û‚ÍA‚¨Žè”‚Å‚·‚ªAŽè“®‚ÅƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢
 
 
 •ÏX—š—ð
+  2018/02/10 Version 2.4.0
+    [‹@”\] " "‚ÅˆÍ‚ñ‚¾URL‚É‘Î‰ž
+    [ƒoƒO] weblioŒŸõ‚ª‚Å‚«‚È‚­‚È‚Á‚Ä‚¢‚½•s‹ï‡‚ðC³
+    [ƒoƒO] < > ‚ð‚Â‚¯‚Ä“\‚è•t‚¯‹@”\‚ª“®ì‚µ‚È‚¢•s‹ï‡‚ðC³
+
   2018/01/24 Version 2.3.1
     [ƒoƒO] ƒƒOƒtƒ@ƒCƒ‹‚ÌŠg’£Žq‚ªdll‚¾‚Á‚½‚Ì‚Ålog‚ÉC³
     [ƒoƒO] ‘I‘ð•¶Žš—ñ‚ÌŽæ“¾‚ÉŽ¸”s‚·‚é•s‹ï‡‚ðC³
