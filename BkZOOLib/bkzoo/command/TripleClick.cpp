@@ -39,7 +39,6 @@ namespace bkzoo
         {
             SimpleParam& simpleParam = param_.simpleParam;
 
-            // ここで選択文字列を取得する。取得できなかったらここで抜ける。
             int failedCount = 0;
             while (true)
             {
@@ -51,28 +50,47 @@ namespace bkzoo
                 simpleParam.string = StringGetter::removedSpaceText(selectedText);
                 if (!simpleParam.string.empty())
                 {
-
-                    LOG_DEBUG << "TripleClickCommand::execute():param_.string=" << wm_cast<std::string>(simpleParam.string) << ", param_.hWnd=" << simpleParam.hWnd << ", failedCount=" << failedCount;
+                    LOG_DEBUG << "simpleParam.string=" << wm_cast<std::string>(simpleParam.string) << ", simpleParam.hWnd=" << simpleParam.hWnd << ", failedCount=" << failedCount;
                     break;
                 }
 
-                // 3回繰り返す。
-                if (++failedCount == 3)
+                // 複数回繰り返す。
+                if (++failedCount == 5)
                 {
-                    if (StringGetter::selectedText(simpleParam.hWnd).empty())
-                        LOG_WARNING << ": param_.string.empty(), param_.hWnd=" << simpleParam.hWnd << ", failedCount=" << failedCount;
-                    return false;
+                    LOG_DEBUG << "failedCount=" << failedCount;
+                    break;
                 }
             }
 
 
-
             {
-                // Ctrlキー押しながらトリプルクリックしたときの処理
+                // Ctrlキー押しながらトリプルクリックしたときの処理（選択文字列がなければクリップボードの文字列に<>をつけて貼り付ける。選択文字列があればその選択文字列に<>をつける。）
                 if (Config::instance().ctrlTripleClick()
                     && ((param_.modifierKey & ModifierKeyType::Ctrl) != 0))
                 {
-                    // Ctrlキーがあれば <file:// > を付加。
+                    if (simpleParam.string.empty())
+                    {
+                        // Ctrl+DoubleClickのフラグだが処理が同じなのでこのフラグを参照する。
+                        if (Config::instance().ctrlDoubleClick())
+                        {
+                            // 選択文字列が空のときはクリップボードの文字列に<>をつけて貼り付け実施
+                            const std::wstring clipboardText = StringGetter::clipboardText(simpleParam.hWnd);
+                            const std::wstring clipboardStr = StringGetter::removedSpaceText(clipboardText);
+                            if (clipboardStr.empty())
+                            {
+                                // クリップボードも空ならば抜ける
+                                return false;
+                            }
+                            simpleParam.string = clipboardStr;
+
+                            PasteFileKeywordCommand pasteFileKeyword(simpleParam);
+                            return pasteFileKeyword.execute();
+                        }
+                        // 選択文字列空ならここで抜ける
+                        return false;
+                    }
+
+                    // 選択文字列があれば <file:// > を付加。
                     PasteFileKeywordCommand command(simpleParam);
                     if (command.execute())
                     {
@@ -86,6 +104,12 @@ namespace bkzoo
                 }
             }
 
+            // 選択文字列がなければここで抜ける。
+            if (simpleParam.string.empty())
+            {
+                LOG_DEBUG << "simpleParam.string.empty(), simpleParam.hWnd=" << simpleParam.hWnd;
+                return false;
+            }
 
             if (!Config::instance().tripleClick())
             {
