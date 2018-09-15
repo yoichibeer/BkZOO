@@ -564,7 +564,7 @@ TEST_F(ConfigTest, config)
     EXPECT_EQ(L'W', config_.shortcut(App::WinSCP));
 
     std::list<Site> sites = config_.sites();
-    EXPECT_EQ(2, sites.size());
+    EXPECT_EQ(2U, sites.size());
     {
         auto site = sites.begin();
         std::advance(site, 0);

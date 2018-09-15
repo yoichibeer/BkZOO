@@ -44,5 +44,5 @@ TEST_F(ConfigServiceTest, initialize)
     bool ret = config::ConfigService::initialize(nullptr);
     ASSERT_TRUE(ret);
 
-    EXPECT_EQ(23, config::Config::instance().sites().size());
+    EXPECT_EQ(23U, config::Config::instance().sites().size());
 }

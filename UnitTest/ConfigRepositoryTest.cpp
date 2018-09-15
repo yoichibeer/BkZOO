@@ -85,7 +85,7 @@ TEST(ConfigRepository, readPresetSites)
     ASSERT_TRUE(ret);
 
     const SiteMap sites = configRepository.readPresetSites();
-    ASSERT_EQ(21, sites.size());
+    ASSERT_EQ(21U, sites.size());
 
     {
         const Site& site = sites.at(6);
@@ -137,7 +137,7 @@ TEST(ConfigRepository, readStandardSites)
     ASSERT_TRUE(ret);
 
     const SiteVector standardSites = configRepository.readStandardSites();
-    ASSERT_EQ(3, standardSites.size());
+    ASSERT_EQ(3U, standardSites.size());
 
     {
         const Site& site = standardSites.at(0);
@@ -360,7 +360,7 @@ TEST(ConfigRepository, writeStandardSites)
 
         const SiteVector standardSites = configRepository.readStandardSites();
 
-        ASSERT_EQ(5, standardSites.size());
+        ASSERT_EQ(5U, standardSites.size());
     }
 
     // 書き込み２度目（最初のを削除しているはず）
@@ -428,7 +428,7 @@ TEST(ConfigRepository, writeStandardSites)
 
         const SiteVector standardSites = configRepository.readStandardSites();
 
-        ASSERT_EQ(3, standardSites.size());
+        ASSERT_EQ(3U, standardSites.size());
         {
             const auto& site = standardSites.at(0);
             EXPECT_EQ(L"true", site.clickable());
@@ -539,7 +539,7 @@ TEST(ConfigRepository, removeStandardSites)
         // テストデータの確認
         {
             const SiteVector standardSites = configRepository.readStandardSites();
-            ASSERT_EQ(2, standardSites.size());
+            ASSERT_EQ(2U, standardSites.size());
         }
 
         // 削除テスト
@@ -547,7 +547,7 @@ TEST(ConfigRepository, removeStandardSites)
             configRepository.removeStandardSites();
 
             const SiteVector standardSites = configRepository.readStandardSites();
-            ASSERT_EQ(0, standardSites.size());
+            ASSERT_EQ(0U, standardSites.size());
         }
     }
 

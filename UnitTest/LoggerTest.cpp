@@ -165,7 +165,7 @@ namespace bkzoo
             std::mt19937 mt(rd());
             std::uniform_int_distribution<int> thousand(1, 10);
 
-            constexpr int TEST_SIZE = 1000;
+            constexpr unsigned int TEST_SIZE = 1000U;
             for (int i = 0; i < TEST_SIZE; ++i)
             {
                 threads.push_back(std::thread([&thousand, &mt, &logger, i] { Sleep(thousand(mt)); logger << i << bkzEndl; }));

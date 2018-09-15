@@ -51,7 +51,7 @@ TEST(CofigFactory, create_default)
     EXPECT_EQ(L'V', config->shortcut(config::App::TortoiseSVN));
     EXPECT_EQ(L'W', config->shortcut(config::App::WinSCP));
 
-    ASSERT_EQ(0, config->sites().size());
+    ASSERT_EQ(0U, config->sites().size());
 }
 
 TEST(ConfigFactory, create)
@@ -254,7 +254,7 @@ TEST(ConfigFactory, create)
     EXPECT_EQ(L'E', config->shortcut(config::App::TeraTerm));
     EXPECT_EQ(L'O', config->shortcut(config::App::TortoiseSVN));
     EXPECT_EQ(L'I', config->shortcut(config::App::WinSCP));
-    ASSERT_EQ(7, config->sites().size());
+    ASSERT_EQ(7U, config->sites().size());
     {
         auto site = config->sites().begin();
         std::advance(site, 0);
